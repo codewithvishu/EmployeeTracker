@@ -1,0 +1,16 @@
+{
+    "client": "Thunder Client",
+    "environmentName": "Django 1",
+    "dateExported": "2024-03-29T15:59:43.225Z",
+    "version": "1.0",
+    "variables": [
+        {
+            "name": "url",
+            "value": "127.0.0.1:8000"
+        },
+        {
+            "name": "model_type",
+            "value": "employees"
+        }
+    ]
+}
