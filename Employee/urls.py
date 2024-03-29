@@ -15,6 +15,12 @@ urlpatterns = [
     path('employees1/',csrf_exempt(views.EmployeeList.as_view()),  name="employee1-list"),
     path('employees1/<int:pk>/',csrf_exempt(views.EmployeeDetail.as_view()), name="employee1-detail"),
 
+    path('employees2/', views.employee_list2, name="employee2-list"),
+    path('employees2/<int:pk>/', views.employee_detail2, name="employee2-detail"),
+
+    path('employees3/',views.EmployeeList3.as_view(),  name="employee3-list"),
+    path('employees3/<int:pk>/',views.EmployeeDetail3.as_view(), name="employee3-detail"),
+
 ]
 
 

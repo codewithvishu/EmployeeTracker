@@ -1,0 +1,130 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Employee Tracker",
+    "dateExported": "2024-03-29T15:46:34.928Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "25b1f6de-c09c-48af-a5f6-de00fb8b1553",
+            "name": "Employee",
+            "containerId": "",
+            "created": "2024-03-24T19:23:58.536Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "d4d46907-2240-41de-bfb8-c49cb61af468",
+            "colId": "1a68e4ae-c9c0-4e13-8841-ba895427d19d",
+            "containerId": "25b1f6de-c09c-48af-a5f6-de00fb8b1553",
+            "name": "Create Employee",
+            "url": "{{url}}/api/v1/{{model_type}}/",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-24T19:24:22.488Z",
+            "modified": "2024-03-29T15:43:23.696Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstname\": \"kayu787878\",\n  \"lastname\": \"Jain\",\n  \"salary\": 25000.0,\n  \"mobile\": 9981086243,\n  \"email\": \"Vishant.jain@gmail.com\",\n  \"DOB\": \"1999-03-14\",\n  \"joining_date\": \"2021-11-11\",\n  \"termination_date\": \"2022-11-11\",\n  \"create_ts\": \"2024-03-28T12:03:48.438021Z\",\n  \"mod_ts\": \"2024-03-28T12:03:48.438021Z\",\n  \"is_active\": true\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f93e1e25-487a-4bb2-befb-75fa986519ca",
+            "colId": "1a68e4ae-c9c0-4e13-8841-ba895427d19d",
+            "containerId": "25b1f6de-c09c-48af-a5f6-de00fb8b1553",
+            "name": "Get Employee",
+            "url": "127.0.0.1:8000/api/v1/{{model_type}}/20",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-24T19:36:21.468Z",
+            "modified": "2024-03-29T15:43:36.162Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fb66560b-0675-49a8-abea-8895838a0a8d",
+            "colId": "1a68e4ae-c9c0-4e13-8841-ba895427d19d",
+            "containerId": "25b1f6de-c09c-48af-a5f6-de00fb8b1553",
+            "name": "Get ALL Employee",
+            "url": "{{url}}/api/v1/{{model_type}}",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-03-29T05:41:16.428Z",
+            "modified": "2024-03-29T15:30:10.352Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d31f2832-3094-45f3-8e25-59da037ab350",
+            "colId": "1a68e4ae-c9c0-4e13-8841-ba895427d19d",
+            "containerId": "25b1f6de-c09c-48af-a5f6-de00fb8b1553",
+            "name": "Update Employee",
+            "url": "{{url}}/api/v1/{{model_type}}/20/",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-03-24T19:39:41.007Z",
+            "modified": "2024-03-29T15:43:56.670Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{ \"firstname\": \"kayu787878new\",\n  \"lastname\": \"Jain\",\n  \"salary\": 25000.0,\n  \"mobile\": 9981086243,\n  \"email\": \"Vishant.jain@gmail.com\",\n  \"DOB\": \"1999-03-14\",\n  \"joining_date\": \"2021-11-11\",\n  \"termination_date\": \"2022-11-11\",\n  \"create_ts\": \"2024-03-28T12:03:48.438021Z\",\n  \"mod_ts\": \"2024-03-28T12:03:48.438021Z\",\n  \"is_active\": true\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e45d3652-d9f8-4828-80e0-2600e4596365",
+            "colId": "1a68e4ae-c9c0-4e13-8841-ba895427d19d",
+            "containerId": "25b1f6de-c09c-48af-a5f6-de00fb8b1553",
+            "name": "Delete Employee",
+            "url": "{{url}}/api/v1/{{model_type}}/20",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-03-24T19:46:40.407Z",
+            "modified": "2024-03-29T15:44:02.657Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5d671ed7-8a52-4374-a133-d62309fad0cd",
+            "colId": "1a68e4ae-c9c0-4e13-8841-ba895427d19d",
+            "containerId": "25b1f6de-c09c-48af-a5f6-de00fb8b1553",
+            "name": "Partial Update Employee",
+            "url": "{{url}}/api/v1/{{model_type}}/2/",
+            "method": "PATCH",
+            "sortNum": 80000,
+            "created": "2024-03-24T19:43:07.915Z",
+            "modified": "2024-03-29T15:32:24.471Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"kapil\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "32c9a8b5-b6b6-4489-9d84-67b34eea973e",
+            "colId": "1a68e4ae-c9c0-4e13-8841-ba895427d19d",
+            "containerId": "",
+            "name": "HealthCheck",
+            "url": "{{url}}/healthcheck",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2024-03-29T15:45:30.907Z",
+            "modified": "2024-03-29T15:45:35.818Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

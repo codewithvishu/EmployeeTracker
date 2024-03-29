@@ -22,7 +22,7 @@ class EmployeeViewsTestCase(TestCase):
         )
 
     def test_employee_list_view_GET(self):
-        url = "/api/v1/employees/" 
+        url = "/api/v1/employees/"
         # reverse("Employee:employee-list")
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
@@ -67,8 +67,14 @@ class EmployeeViewsTestCase(TestCase):
         response = self.client.post(url, data=data, content_type="application/json")
         self.assertEqual(response.status_code, 400)
         self.assertIsInstance(response, JsonResponse)
-        self.assertEqual(response.json(),{'non_field_errors': ['Joining date should be lesser than termination date']})
-    
+        self.assertEqual(
+            response.json(),
+            {
+                "non_field_errors": [
+                    "Joining date should be lesser than termination date"
+                ]
+            },
+        )
 
     def test_employee_list_view_POST_400(self):
         url = reverse("Employee:employee-list")
@@ -135,8 +141,9 @@ class EmployeeViewsTestCase(TestCase):
         response = self.client.put(url, data=data, content_type="application/json")
         self.assertEqual(response.status_code, 400)
         self.assertIsInstance(response, JsonResponse)
-        self.assertEqual(response.json()['salary'], ['salary should be in range of 25000 to 100000'])
-
+        self.assertEqual(
+            response.json()["salary"], ["salary should be in range of 25000 to 100000"]
+        )
 
     def test_employee_detail_view_DELETE(self):
         url = reverse("Employee:employee-detail", args=[self.employee.pk])
@@ -145,11 +152,10 @@ class EmployeeViewsTestCase(TestCase):
         self.assertFalse(Employee.objects.filter(pk=self.employee.pk).exists())
 
     def test_healthcheck(self):
-        url = "/healthcheck/"  
-        response = self.client.get(url)  
+        url = "/healthcheck/"
+        response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json(),{"Status":"Up"})
-
+        self.assertEqual(response.json(), {"Status": "Up"})
 
 
 class Employee1ViewsTestCase(TestCase):
@@ -260,8 +266,9 @@ class Employee1ViewsTestCase(TestCase):
         response = self.client.put(url, data=data, content_type="application/json")
         self.assertEqual(response.status_code, 400)
         self.assertIsInstance(response, JsonResponse)
-        self.assertEqual(response.json()['salary'], ['salary should be in range of 25000 to 100000'])
-
+        self.assertEqual(
+            response.json()["salary"], ["salary should be in range of 25000 to 100000"]
+        )
 
     def test_employee_detail_view_DELETE(self):
         url = reverse("Employee:employee1-detail", args=[self.employee.pk])
@@ -271,13 +278,14 @@ class Employee1ViewsTestCase(TestCase):
 
     def test_get_object(self):
         from Employee.views import EmployeeDetail
+
         emp_detail = EmployeeDetail()
         emp = emp_detail.get_object(self.employee.id)
         self.assertEqual(self.employee, emp)
 
-    def test_get_object_error(self):
+    def test_get_object_not_found(self):
         from Employee.views import EmployeeDetail
+
         emp_detail = EmployeeDetail()
-        response = emp_detail.get_object(10)
-        self.assertEqual(response.status_code, 404)
-        self.assertIsInstance(response, HttpResponse)
+        emp = emp_detail.get_object(10)
+        self.assertEqual(emp, None)
