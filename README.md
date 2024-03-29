@@ -13,6 +13,8 @@ coverage report -m
 git init
 git remote add origin https://github.com/codewithvishu/EmployeeTracker.git
 git add .
+git commit -m "Initial Commit"
+git push origin master
 
 python -m venv venv
 ./venv/Scripts/activate
