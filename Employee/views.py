@@ -1,14 +1,15 @@
 from django.http import HttpResponse, JsonResponse
-from rest_framework.parsers import JSONParser
-from django.shortcuts import render
-from .models import Employee
-from rest_framework import serializers
-from .serializers import EmployeeSerializer
 from django.views.decorators.csrf import csrf_exempt
 from django.views import View
+
+from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from rest_framework.views import APIView
 from rest_framework import status
+
+from .models import Employee
+from .serializers import EmployeeSerializer
 
 
 # Type 1
@@ -158,9 +159,6 @@ def employee_detail2(request, pk):
 
 
 # Type 4
-from rest_framework.views import APIView
-
-
 class EmployeeList3(APIView):
 
     def get(self, request):
